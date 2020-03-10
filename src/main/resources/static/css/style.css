@@ -1,0 +1,155 @@
+@charset "utf-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body, html {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	background: #6cccf4;
+}
+
+.login-bg {
+	width: 100%;
+	height: 100%;
+}
+
+.login-bg img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.login-bg .logintitle {
+	background: url(../../../images/login/tw/logintitle.png?_111) no-repeat;
+	width: 861px;
+	height: 47px;
+	position: absolute;
+	top: 80px;
+	left: 15%;
+}
+
+.login_area {
+	width: 100%;
+	height: 100%;
+}
+
+.login_area h1 {
+	position: absolute;
+	width: 972px;
+	height:72px;
+	margin:10% auto 0;
+	text-align: center;
+    color: #fff;
+    font-size: 47px;
+    font-family:cursive;
+    text-shadow: 5px 5px 2px #333;
+    font-weight: bold;
+}
+
+.login-bg .login-form {
+	position: absolute;
+	top: 110px; width : 450px;
+	height: 415px;
+	opacity: 1;
+	width: 450px;
+}
+
+.login-form ul {
+	position: absolute;
+	top: 25%;
+	left: 12%;
+}
+
+.login-form ul li {
+	padding-bottom: 10px;
+}
+
+.login-form ul li.rem-pas input {
+	vertical-align: top;
+}
+
+.login-form ul li.passwd {
+	vertical-align: top;
+	margin-top: 20px;
+}
+
+.login-form ul li.rem-pas label {
+	font: 14px/14px 'Microsoft Yahei';
+	color: #333;
+}
+
+.login-form .inputBg {
+	width: 254px;
+	height: 40px;
+ 	padding-left: 40px; 
+ 	background-color:#9edbf5;
+}
+
+.login-form .inputBg input {
+	width: 250px;
+	height: 37px;
+	border: 0;
+	vertical-align: bottom;
+/* 	border-bottom: 1px solid #03A9F4; */
+/* 	background: 0 none; */	
+	color: #f5eded;
+	background-color:#9edbf5;
+	font: 14px/37px 'Microsoft Yahei';
+}
+
+.login-form .inputBg input.errorInput {
+	background: #fee;
+	border: 1px solid #DB0027;
+}
+
+.login-form .username {
+	background: url("../../../images/user.png") no-repeat 10px;
+	background-color:#9edbf5;
+}
+
+.login-form .password {
+	background: url("../../../images/password.png") no-repeat 10px;
+	background-color:#9edbf5;	
+}
+
+.login-form  ul li.rem-pas {
+	padding: 5px 0 15px 0px;
+}
+
+.login-form .login-btn {
+	background: url(../../../images/loginbtn.png) no-repeat;
+	width: 294px !important;
+	height: 50px;
+	border: 0 none;
+	color: #fff;
+	margin-top: 10px;
+	cursor: pointer;
+	text-indent: -9999em;
+	background-size: 100%;
+}
+
+.login-form .reset-btn {
+	background: url(../../../images/login/cx/btnreset.png) no-repeat;
+	width: 106px;
+	height: 35px;
+	border: 0 none;
+	color: #fff;
+	/* 	font: 18px/44px 'Microsoft Yahei'; */
+	margin-right: 60px;
+	cursor: pointer;
+	text-indent: -9999em;
+}
+
+.login-form .login-btn:hover {
+	background-position: 0 0;
+}

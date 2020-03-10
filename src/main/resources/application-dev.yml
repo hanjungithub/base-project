@@ -1,0 +1,89 @@
+spring:
+  boot:
+      admin:
+        client:
+          #配置Spring Boot Admin Server的地址，用户名，密码
+          url: http://127.0.0.1:8000
+          username: admin
+          password: admin
+          #用于计算要注册的服务URL，即本项目地址
+          instance:
+            service-base-url: http://127.0.0.1:${server.port}
+  #redis配置
+  redis:
+    host: localhost
+    password:
+    port: 6379
+  #数据库配置
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/mydatabase?useUnicode=true&characterEncoding=utf-8&useAffectedRows=true&allowMultiQueries=true
+      username: root
+      password: admin
+      #初始化连接池的大小
+      initial-size: 5
+      #最小连接数
+      min-idle: 5
+      #最大连接数
+      max-active: 100
+      #配置从连接池获取连接等待超时的时间
+      max-wait: 10000
+      #配置间隔多久启动一次DestroyThread，对连接池内的连接才进行一次检测，单位是毫秒。
+      #检测时:1.如果连接空闲并且超过minIdle以外的连接，如果空闲时间超过minEvictableIdleTimeMillis设置的值则直接物理关闭。
+      #2.在minIdle以内的不处理
+      time-between-eviction-runs-millis: 600000
+      #配置一个连接在池中最大空闲时间，单位是毫秒
+      min-evictable-idle-time-millis: 300000
+      #设置从连接池获取连接时是否检查连接有效性，true时，每次都检查;false时，不检查
+      test-on-borrow: false
+      #设置往连接池归还连接时是否检查连接有效性，true时，每次都检查;false时，不检查
+      test-on-return: false
+      #设置从连接池获取连接时是否检查连接有效性，true时，如果连接空闲时间超过minEvictableIdleTimeMillis进行检查，否则不检查;false时，不检查
+      test-while-idle: true
+      #检验连接是否有效的查询语句。如果数据库Driver支持ping()方法，则优先使用ping()方法进行检查，否则使用validationQuery查询进行检查。(Oracle jdbc Driver目前不支持ping方法)
+      validation-query: select 1 from dual
+      #打开PSCache，并且指定每个连接上PSCache的大小，Oracle等支持游标的数据库，打开此开关，会以数量级提升性能，具体查阅PSCache相关资料
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      filters: stat,wall,slf4j
+      #数据库连接不上不自动重连，避免Oracle用户被锁
+      connection-error-retry-attempts: 0
+      break-after-acquire-failure: true
+      stat-view-servlet:
+        url-pattern: "/druid/*"
+        login-password: 3423432421314545
+        login-username: admin
+        #启用
+        enabled: true
+      driver-class-name: com.mysql.jdbc.Driver
+
+
+#日志存放路径
+logback:
+  path: logs
+shiro:
+  cacheExpire: 1800
+  filterChainDefinitions: /login=anon;/logout=anon;/login**=anon;/favicon.ico=anon;/actuator/**=anon;/resource/**=anon;/static/css/**=anon;/static/images/**=anon;/static/js/**=anon;/=anon;/druid/**=anon;/**/*.js=anon;/**/*.css=anon;/**/*.gif=anon;/**/*.jpg=anon;/**/*.jpgx=anon;/**/*.png=anon;/**/*.ico=anon;*.js,*.gif,*.jpg,*.png,*.css,*.ico,*.jpgx=anon;/404=anon;/500=anon;/**=auth
+  sessionValidationInterval: 10000
+
+#数据库配置
+database0:
+  url: jdbc:mysql://localhost:3306/sharing-0?useUnicode=true&characterEncoding=utf-8&useAffectedRows=true&allowMultiQueries=true
+  username: root
+  password: admin
+  driverClassName: com.mysql.jdbc.Driver
+  databaseName: sharing-0
+
+database1:
+  url: jdbc:mysql://localhost:3306/sharing-1?useUnicode=true&characterEncoding=utf-8&useAffectedRows=true&allowMultiQueries=true
+  username: root
+  password: admin
+  driverClassName: com.mysql.jdbc.Driver
+  databaseName: sharing-1
+#https配置
+#server:
+#   ssl:
+#      key-store: classpath:keystore.p12
+#      key-store-type: PKCS12
+#      key-alias: tomcat
+#      key-store-password: wb1378661332
