@@ -209,7 +209,7 @@
                          <groupId>mysql</groupId>
                          <artifactId>mysql-connector-java</artifactId>
                          <!-- 引用依赖库的版本 -->
-                         <version>5.1.35</version>
+                         <version>8.0.28</version>
                      </dependency>
                     <!-- https://mvnrepository.com/artifact/ojdbc/ojdbc -->
                     <!--<dependency>
